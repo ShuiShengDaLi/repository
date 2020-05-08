@@ -1,0 +1,161 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  llibrary (llibrary-core-1.0.11-1.12.2.jar)
+  ratscore (rats-3.2.9.jar)
+  LoadingPlugin (Reskillable-1.12.2-1.13.0.jar)
+Contact their authors BEFORE contacting forge
+
+// Uh... Did I do that?
+
+Time: 5/8/20 11:54 AM
+Description: Ticking block entity
+
+java.lang.NoSuchMethodError: net.dries007.tfc.util.calendar.ICalendarTickable.func_73660_a()V
+	at tfctech.objects.tileentities.TESmelteryFirebox.func_73660_a(TESmelteryFirebox.java:79)
+	at net.minecraft.world.World.func_72939_s(World.java:1838)
+	at net.minecraft.world.WorldServer.func_72939_s(WorldServer.java:613)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:767)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.integrated.IntegratedServer.func_71217_p(IntegratedServer.java:279)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at tfctech.objects.tileentities.TESmelteryFirebox.func_73660_a(TESmelteryFirebox.java:79)
+
+-- Block entity being ticked --
+Details:
+	Name: tfctech:smeltery_firebox // tfctech.objects.tileentities.TESmelteryFirebox
+	Block type: ID #2477 (tile.tfctech.smeltery_firebox // tfctech.objects.blocks.devices.BlockSmelteryFirebox // tfctech:smeltery_firebox)
+	Block data value: 3 / 0x3 / 0b0011
+	Block location: World: (156,5,-587), Chunk: (at 12,0,5 in 9,-37; contains blocks 144,0,-592 to 159,255,-577), Region: (0,-2; contains chunks 0,-64 to 31,-33, blocks 0,0,-1024 to 511,255,-513)
+	Actual block type: ID #2477 (tile.tfctech.smeltery_firebox // tfctech.objects.blocks.devices.BlockSmelteryFirebox // tfctech:smeltery_firebox)
+	Actual block data value: 3 / 0x3 / 0b0011
+Stacktrace:
+	at net.minecraft.world.World.func_72939_s(World.java:1838)
+	at net.minecraft.world.WorldServer.func_72939_s(WorldServer.java:613)
+
+-- Affected level --
+Details:
+	Level name: 新的世界
+	All players: 1 total; [EntityPlayerMP['False'/1, l='新的世界', x=157.40, y=4.00, z=-587.14]]
+	Chunk stats: ServerChunkCache: 305 Drop: 0
+	Level seed: 6255858123040650252
+	Level generator: ID 01 - flat, ver 0. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (152,4,-583), Chunk: (at 8,0,9 in 9,-37; contains blocks 144,0,-592 to 159,255,-577), Region: (0,-2; contains chunks 0,-64 to 31,-33, blocks 0,0,-1024 to 511,255,-513)
+	Level time: 890 game time, 832 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 93854 (now: false), thunder time: 45999 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:767)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.integrated.IntegratedServer.func_71217_p(IntegratedServer.java:279)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 7 (amd64) version 6.1
+	Java Version: 1.8.0_211, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 2901029664 bytes (2766 MB) / 4143972352 bytes (3952 MB) up to 4294967296 bytes (4096 MB)
+	JVM Flags: 11 total; -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=16M -XX:-UseAdaptiveSizePolicy -XX:-OmitStackTraceInFastThrow -Xmn128m -Xmx4096m -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.5.2847 Optifine OptiFine_1.12.2_HD_U_F4 56 mods loaded, 56 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID                    | Version              | Source                                                    | Signature                                |
+	|:------ |:--------------------- |:-------------------- |:--------------------------------------------------------- |:---------------------------------------- |
+	| LCHIJA | minecraft             | 1.12.2               | minecraft.jar                                             | None                                     |
+	| LCHIJA | mcp                   | 9.42                 | minecraft.jar                                             | None                                     |
+	| LCHIJA | FML                   | 8.0.99.99            | forge-1.12.2-14.23.5.2847.jar                             | None                                     |
+	| LCHIJA | forge                 | 14.23.5.2847         | forge-1.12.2-14.23.5.2847.jar                             | None                                     |
+	| LCHIJA | codechickenlib        | 3.2.3.358            | [NEI前置鸡骨头核心]CodeChickenLib-1.12.2-3.2.3.358-universal.jar | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCHIJA | foamfix               | 0.9.9-1.12.2         | [优化]foamfix-0.9.9-1.12.2-law.jar                          | None                                     |
+	| LCHIJA | antiqueatlas          | 4.6.3                | antiqueatlas-1.12.2-4.6.3.jar                             | None                                     |
+	| LCHIJA | antiqueatlasoverlay   | 1.2                  | antiqueatlas-1.12.2-4.6.3.jar                             | None                                     |
+	| LCHIJA | anvilpatch            | 1.0.0                | anvilpatch-1.0.0.jar                                      | None                                     |
+	| LCHIJA | baubles               | 1.5.2                | Baubles-1.12-1.5.2.jar                                    | None                                     |
+	| LCHIJA | baubleshud            | 5.0.2                | BaublesHud-1.12.2-5.0.2.jar                               | None                                     |
+	| LCHIJA | betterquesting        | 3.5.320              | BetterQuesting-3.5.320.jar                                | None                                     |
+	| LCHIJA | bountifulbaubles      | 0.0.1                | Bountiful+Baubles-1.12.2-0.1.5.jar                        | None                                     |
+	| LCHIJA | champions             | 1.12.2-1.0.11.3      | champions-1.12.2-1.0.11.3.jar                             | 2484ef4d131fdc0dca0647aa21b7b944ddb935a1 |
+	| LCHIJA | extendedrenderer      | v1.0                 | coroutil-1.12.1-1.2.37.jar                                | None                                     |
+	| LCHIJA | coroutil              | 1.12.1-1.2.37        | coroutil-1.12.1-1.2.37.jar                                | None                                     |
+	| LCHIJA | configmod             | v1.0                 | coroutil-1.12.1-1.2.37.jar                                | None                                     |
+	| LCHIJA | crafttweaker          | 4.1.19               | CraftTweaker2-1.12-4.1.19.jar                             | None                                     |
+	| LCHIJA | ctgui                 | 1.0.0                | CraftTweaker2-1.12-4.1.19.jar                             | None                                     |
+	| LCHIJA | mtlib                 | 3.0.6                | MTLib-3.0.6.jar                                           | None                                     |
+	| LCHIJA | modtweaker            | 4.0.17               | modtweaker-4.0.17.jar                                     | None                                     |
+	| LCHIJA | jei                   | 4.15.0.291           | jei_1.12.2-4.15.0.291.jar                                 | None                                     |
+	| LCHIJA | crafttweakerjei       | 2.0.3                | CraftTweaker2-1.12-4.1.19.jar                             | None                                     |
+	| LCHIJA | disenchanter          | 1.6                  | disenchanter-[1.12]1.6.jar                                | None                                     |
+	| LCHIJA | enchdesc              | 1.1.15               | EnchantmentDescriptions-1.12.2-1.1.15.jar                 | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | minerva               | 1.0.13               | minerva-library-1.0.13.jar                                | b851b8b7c7f4d8d0e910ff27618150ba80c026ec |
+	| LCHIJA | extraalchemy          | 0.5.3                | extraalchemy-0.5.3.jar                                    | b851b8b7c7f4d8d0e910ff27618150ba80c026ec |
+	| LCHIJA | forgemultipartcbe     | 2.6.2.83             | ForgeMultipart-1.12.2-2.6.2.83-universal.jar              | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCHIJA | microblockcbe         | 2.6.2.83             | ForgeMultipart-1.12.2-2.6.2.83-universal.jar              | None                                     |
+	| LCHIJA | minecraftmultipartcbe | 2.6.2.83             | ForgeMultipart-1.12.2-2.6.2.83-universal.jar              | None                                     |
+	| LCHIJA | ftblib                | 5.4.3.148            | FTBLib-5.4.3.148.jar                                      | None                                     |
+	| LCHIJA | ftbutilities          | 5.4.0.114            | FTBUtilities-5.4.0.114.jar                                | None                                     |
+	| LCHIJA | hw_inv                | 1.12.1-1.1.13        | hostileworlds_invasions-1.12.1-1.1.13.jar                 | None                                     |
+	| LCHIJA | i18nmod               | 1.12.2-1.0.8         | i18nupdatemod-1.12.2-1.0.8.jar                            | None                                     |
+	| LCHIJA | lostcities            | 2.0.22               | lostcities-1.12-2.0.22.jar                                | None                                     |
+	| LCHIJA | lostsouls             | 1.1.4                | lostsouls-1.12-1.1.4.jar                                  | None                                     |
+	| LCHIJA | modularmachinery      | 1.11.1               | modularmachinery-1.12.2-1.11.1.jar                        | a0f0b759d895c15ceb3e3bcb5f3c2db7c582edf0 |
+	| LCHIJA | nyx                   | 1.3.0                | Nyx-1.3.0.jar                                             | None                                     |
+	| LCHIJA | railcraft             | 12.0.0               | railcraft-12.0.0.jar                                      | a0c255ac501b2749537d5824bb0f0588bf0320fa |
+	| LCHIJA | llibrary              | 1.7.19               | llibrary-1.7.19-1.12.2.jar                                | b9f30a813bee3b9dd5652c460310cfcd54f6b7ec |
+	| LCHIJA | rats                  | 3.2.9                | rats-3.2.9.jar                                            | None                                     |
+	| LCHIJA | reskillable           | 1.12.2-1.13.0        | Reskillable-1.12.2-1.13.0.jar                             | None                                     |
+	| LCHIJA | silentlib             | 3.0.13               | SilentLib-1.12.2-3.0.13+167.jar                           | None                                     |
+	| LCHIJA | scalinghealth         | 1.3.37               | ScalingHealth-1.12.2-1.3.42+147.jar                       | None                                     |
+	| LCHIJA | simplelogin           | 0.3.4-stable-build98 | simplelogin-0.3.4-stable-build98-all.jar                  | None                                     |
+	| LCHIJA | somanyenchantments    | 0.4.4                | So+Many+Enchantments+V0.4.4.jar                           | None                                     |
+	| LCHIJA | bq_standard           | 3.4.173              | StandardExpansion-3.4.173.jar                             | None                                     |
+	| LCHIJA | tfc                   | 1.0.12.141           | TerraFirmaCraft-MC1.12-1.0.12.141.jar                     | None                                     |
+	| LCHIJA | tfctech               | 1.2.10               | TFCTech-Unofficial-MC1.12.2-1.2.10.jar                    | None                                     |
+	| LCHIJA | theoneprobe           | 1.4.28               | theoneprobe-1.12-1.4.28.jar                               | None                                     |
+	| LCHIJA | tombstone             | 3.7.1                | tombstone-3.7.1-1.12.2.jar                                | None                                     |
+	| LCHIJA | torohealthmod         | 1.12.2-11            | torohealth-1.12.2-11.jar                                  | None                                     |
+	| LCHIJA | translocators         | 2.5.2.81             | Translocators-1.12.2-2.5.2.81-universal.jar               | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCHIJA | travellersbackpack    | 1.0.23.23            | TravellersBackpack-1.12.2-1.0.23.23.jar                   | None                                     |
+	| LCHIJA | waystones             | 4.0.72               | Waystones_1.12.2-4.0.72.jar                               | None                                     |
+	| LCHIJA | zombieawareness       | 1.12.1-1.11.16       | zombieawareness-1.12.1-1.11.16.jar                        | None                                     |
+
+	Loaded coremods (and transformers): 
+llibrary (llibrary-core-1.0.11-1.12.2.jar)
+  net.ilexiconn.llibrary.server.core.plugin.LLibraryTransformer
+  net.ilexiconn.llibrary.server.core.patcher.LLibraryRuntimePatcher
+ratscore (rats-3.2.9.jar)
+  com.github.alexthe666.rats.server.misc.RatsRuntimePatcher
+LoadingPlugin (Reskillable-1.12.2-1.13.0.jar)
+  codersafterdark.reskillable.base.asm.ClassTransformer
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 8; [EntityPlayerMP['False'/1, l='新的世界', x=157.40, y=4.00, z=-587.14]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	OptiFine Version: OptiFine_1.12.2_HD_U_F4
+	OptiFine Build: 20191023-122002
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 417.35
+	OpenGlRenderer: GeForce GTX 960/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 8
